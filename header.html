@@ -1,27 +1,25 @@
 <header>
   <div class="header-top">
     <div class="logo">
-      <img src="/img/logo.webp" alt="Logo" class="logo-img" />
+      <img src="img/logo.webp" alt="Logo" class="logo-img" />
+      <!-- Bỏ / đầu -->
       <p>Trường Đại học Kinh tế - Luật</p>
     </div>
     <nav class="header-nav">
-      <a href="/homePage.html" class="nav-link"
-        ><i class="fas fa-home"></i> Trang chủ</a
-      >
-      <a href="/rulesPage.html" class="nav-link"
-        ><i class="fas fa-info-circle"></i> Thể lệ</a
-      >
-      <a href="/statsPage.html" class="nav-link"
-        ><i class="fas fa-users"></i> Thống kê</a
-      >
-      <a href="/prizesPage.html" class="nav-link"
-        ><i class="fas fa-trophy"></i> Cơ cấu giải thưởng</a
-      >
-      <a href="/loginPage.html" class="nav-link btn-login">ĐĂNG NHẬP</a>
+      <a href="/" class="nav-link"> <i class="fas fa-home"></i> Trang chủ </a>
+      <a href="rulesPage.html" class="nav-link">
+        <i class="fas fa-info-circle"></i> Thể lệ
+      </a>
+      <a href="statsPage.html" class="nav-link">
+        <i class="fas fa-users"></i> Thống kê
+      </a>
+      <a href="prizesPage.html" class="nav-link">
+        <i class="fas fa-trophy"></i> Cơ cấu giải thưởng
+      </a>
+      <a href="loginPage.html" class="nav-link btn-login">ĐĂNG NHẬP</a>
     </nav>
   </div>
 </header>
-
 <script>
   // Tự động active link tương ứng với trang hiện tại
   document.addEventListener("DOMContentLoaded", function () {
@@ -29,7 +27,17 @@
     const links = document.querySelectorAll(".header-nav a");
 
     links.forEach((link) => {
-      if (currentPath.endsWith(link.getAttribute("href"))) {
+      const linkPath = link.getAttribute("href");
+
+      // Xử lý trường hợp home page (/)
+      if (
+        (currentPath === "/" || currentPath === "/index.html") &&
+        linkPath === "/"
+      ) {
+        link.classList.add("active");
+      }
+      // Các trang khác
+      else if (currentPath.endsWith(linkPath)) {
         link.classList.add("active");
       } else {
         link.classList.remove("active");
