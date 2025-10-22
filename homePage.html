@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trang chủ</title>
+
+    <link rel="stylesheet" href="/css/home.css" />
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
+    <script src="/js/include.js" defer></script>
+  </head>
+  <body>
+    <!-- Gọi header -->
+    <div data-include="/header.html"></div>
+
+    <!-- Banner -->
+    <div class="banner">
+      <img src="/img/banner.jpg" />
+    </div>
+
+    <!-- Stats -->
+    <section class="stats-section">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon"><i class="fas fa-users"></i></div>
+            <div class="stat-number">2</div>
+            <div class="stat-label">Thí sinh dự thi</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon"><i class="fas fa-building"></i></div>
+            <div class="stat-number">2</div>
+            <div class="stat-label">Đơn vị thi</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Charts & Rankings -->
+    <section class="charts-section">
+      <div class="container">
+        <div class="chart-card">
+          <h3>THỐNG KÊ LƯỢT THI</h3>
+          <canvas id="lineChart" width="400" height="200"></canvas>
+        </div>
+
+        <div class="rankings-grid">
+          <div class="ranking-card">
+            <div class="ranking-header">
+              <i class="fas fa-trophy"></i> ĐƠN VỊ TÍCH CỰC NHẤT
+            </div>
+            <div class="ranking-table">
+              <div class="rank-row">
+                <span class="rank-trophy">🥇</span>
+                <span class="rank-name">Luật</span>
+                <span class="rank-score">25 thí sinh</span>
+              </div>
+              <div class="rank-row">
+                <span class="rank-trophy">🥈</span>
+                <span class="rank-name">Kinh tế đối ngoại</span>
+                <span class="rank-score">22 thí sinh</span>
+              </div>
+              <div class="rank-row">
+                <span class="rank-trophy">🥉</span>
+                <span class="rank-name">Hệ thống thông tin</span>
+                <span class="rank-score">18 thí sinh</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="ranking-card">
+            <div class="ranking-header">
+              <i class="fas fa-crown"></i> ĐỘI THI CÓ BÌNH CHỌN CAO NHẤT
+            </div>
+            <div class="ranking-table">
+              <div class="rank-row">
+                <span class="rank-trophy">🥇</span>
+                <span class="rank-name">
+                  Đội <strong>Kinh tế đối ngoại 01</strong><br />
+                  <small>15 lượt bình chọn</small>
+                </span>
+                <span class="rank-score highlight">15</span>
+              </div>
+              <div class="rank-row">
+                <span class="rank-trophy">🥈</span>
+                <span class="rank-name">
+                  Đội <strong>Luật 02</strong><br />
+                  <small>12 lượt bình chọn</small>
+                </span>
+                <span class="rank-score">12</span>
+              </div>
+              <div class="rank-row">
+                <span class="rank-trophy">🥉</span>
+                <span class="rank-name">
+                  Đội <strong>Công nghệ thông tin 01</strong><br />
+                  <small>10 lượt bình chọn</small>
+                </span>
+                <span class="rank-score">10</span>
+              </div>
+            </div>
+            <a href="#" class="btn-more">Xem thêm →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gọi footer -->
+    <div data-include="/footer.html"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+      const ctx = document.getElementById("lineChart").getContext("2d");
+      new Chart(ctx, {
+        type: "line",
+        data: {
+          labels: ["23/02", "24/02", "25/02"],
+          datasets: [
+            {
+              label: "Lượt thi",
+              data: [3, 1, 4],
+              borderColor: "#1976d2",
+              backgroundColor: "rgba(25, 118, 210, 0.1)",
+              tension: 0.4,
+              fill: true,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          plugins: { legend: { display: false } },
+          scales: { y: { beginAtZero: true, max: 5 } },
+        },
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,260 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+  min-height: 100vh;
+  color: #333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header (giống trang chủ) */
+header {
+  background: linear-gradient(90deg, #1976d2, #42a5f5);
+  box-shadow: 0 4px 20px rgba(25, 118, 210, 0.3);
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+}
+
+.logo-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.header-nav {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  padding: 8px 16px;
+  border-radius: 25px;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-link:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.nav-link.active {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.btn-login {
+  background: rgba(255, 255, 255, 0.3) !important;
+  font-weight: 600 !important;
+}
+
+/* Main Rules Section */
+.rules-section {
+  padding: 60px 0;
+}
+
+.page-title {
+  font-size: 2.8em;
+  font-weight: 700;
+  color: #1976d2;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.page-intro {
+  font-size: 1.2em;
+  color: #555;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 50px;
+  line-height: 1.6;
+}
+
+/* Rule Card (chuyên nghiệp, card style) */
+.rule-card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(25, 118, 210, 0.15);
+  margin-bottom: 40px;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.rule-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 50px rgba(25, 118, 210, 0.2);
+}
+
+.rule-header {
+  background: linear-gradient(135deg, #1976d2, #42a5f5);
+  color: white;
+  padding: 20px 30px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.rule-header i {
+  font-size: 1.5em;
+}
+
+.rule-header h2 {
+  font-size: 1.6em;
+  margin: 0;
+  font-weight: 700;
+}
+
+.rule-content {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.rule-item {
+  border-left: 4px solid #42a5f5;
+  padding-left: 20px;
+}
+
+.rule-item h3 {
+  font-size: 1.2em;
+  color: #1976d2;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+}
+
+.rule-item h3 i {
+  color: #42a5f5;
+  font-size: 1.2em;
+}
+
+.rule-item p {
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Footer (giống trang chủ) */
+.footer {
+  background: linear-gradient(135deg, #1976d2, #42a5f5);
+  color: #fff;
+  text-align: center;
+  padding: 40px 20px;
+  position: relative;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 40px;
+  margin-bottom: 20px;
+}
+
+.footer-section h3,
+.footer-section h4 {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin: 6px 0;
+}
+
+.footer-section ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-section ul li a:hover {
+  text-decoration: underline;
+}
+
+.social-icons i {
+  font-size: 22px;
+  margin: 0 8px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.social-icons i:hover {
+  transform: scale(1.2);
+}
+
+.footer-bottom {
+  font-size: 14px;
+  margin-top: 15px;
+  line-height: 1.6;
+}
+
+.scroll-top {
+  position: absolute;
+  bottom: 20px;
+  right: 30px;
+  background: #f64c93;
+  border: none;
+  border-radius: 50%;
+  padding: 12px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 18px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s;
+}
+
+.scroll-top:hover {
+  background: #fff;
+  color: #f64c93;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 2.2em;
+  }
+
+  .rule-header h2 {
+    font-size: 1.4em;
+  }
+
+  .rule-item h3 {
+    font-size: 1.1em;
+  }
+
+  .rule-content {
+    padding: 20px;
+  }
+}
+
+/* Giữ nguyên các style khác từ trang chủ nếu cần */

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thống Kê</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/stats.css" />
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+
+    <!-- Font & Icon -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- Header (load từ file ngoài) -->
+    <div data-include="/header.html"></div>
+
+    <!-- Main Content -->
+    <main class="stats-section">
+      <div class="container">
+        <h1 class="page-title">THỐNG KÊ ĐỘI THI</h1>
+        <p class="page-intro">
+          Xem bảng xếp hạng các đội thi có lượt bình chọn cao nhất hiện tại.
+        </p>
+
+        <!-- Search & Table Card -->
+        <section class="stats-card">
+          <div class="stats-header">
+            <div class="stats-info">
+              <i class="fas fa-chart-line"></i>
+              <h2>BẢNG XẾP HẠNG LƯỢT BÌNH CHỌN</h2>
+            </div>
+            <div class="search-container">
+              <i class="fas fa-search"></i>
+              <input
+                type="text"
+                placeholder="Tìm kiếm đội thi..."
+                id="searchInput"
+              />
+            </div>
+          </div>
+
+          <div class="table-container">
+            <table class="stats-table">
+              <thead>
+                <tr>
+                  <th>STT</th>
+                  <th>Tên đội thi</th>
+                  <th>Lượt bình chọn</th>
+                </tr>
+              </thead>
+              <tbody id="tableBody">
+                <tr>
+                  <td>🥇</td>
+                  <td>
+                    <strong>Kinh tế đối ngoại 01</strong><br />
+                    <small>Trần Văn A - Đội trưởng</small>
+                  </td>
+                  <td><strong class="vote-count">156</strong></td>
+                </tr>
+                <tr>
+                  <td>🥈</td>
+                  <td>
+                    <strong>Luật Masters</strong><br />
+                    <small>Nguyễn Thị B - Đội trưởng</small>
+                  </td>
+                  <td><strong class="vote-count">142</strong></td>
+                </tr>
+                <tr>
+                  <td>🥉</td>
+                  <td>
+                    <strong>Công nghệ thông tin 01</strong><br />
+                    <small>Lê Văn C - Đội trưởng</small>
+                  </td>
+                  <td><strong class="vote-count">128</strong></td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>
+                    <strong>Kinh tế 02</strong><br />
+                    <small>Phạm Thị D - Đội trưởng</small>
+                  </td>
+                  <td class="vote-count">115</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>
+                    <strong>Hệ thống thông tin Pro</strong><br />
+                    <small>Hoàng Văn E - Đội trưởng</small>
+                  </td>
+                  <td class="vote-count">98</td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>
+                    <strong>Luật Elite</strong><br />
+                    <small>Vũ Thị F - Đội trưởng</small>
+                  </td>
+                  <td class="vote-count">87</td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td>
+                    <strong>Marketing Stars</strong><br />
+                    <small>Đặng Văn G - Đội trưởng</small>
+                  </td>
+                  <td class="vote-count">76</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Total Votes -->
+        <div class="total-votes">
+          <i class="fas fa-vote-yea"></i>
+          <div>
+            <h3>Tổng lượt bình chọn</h3>
+            <div class="total-number">802</div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer (load từ file ngoài) -->
+    <div data-include="/footer.html"></div>
+
+    <!-- JS để load header/footer + Search -->
+    <script src="/js/include.js"></script>
+    <script>
+      // Search functionality
+      document
+        .getElementById("searchInput")
+        .addEventListener("keyup", function () {
+          const searchTerm = this.value.toLowerCase();
+          const rows = document.querySelectorAll("#tableBody tr");
+
+          rows.forEach((row) => {
+            const teamName = row
+              .querySelector("td:nth-child(2)")
+              .textContent.toLowerCase();
+            if (teamName.includes(searchTerm)) {
+              row.style.display = "";
+            } else {
+              row.style.display = "none";
+            }
+          });
+        });
+    </script>
+  </body>
+</html>

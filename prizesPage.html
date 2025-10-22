@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cơ Cấu Giải Thưởng</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/prizes.css" />
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+
+    <!-- Font & Icon -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- Header (load từ file ngoài) -->
+    <div data-include="/header.html"></div>
+
+    <!-- Main Content -->
+    <main class="prizes-section">
+      <div class="container">
+        <h1 class="page-title">GIẢI THƯỞNG HẤP DẪN</h1>
+        <p class="page-intro">
+          Tổng giá trị giải thưởng lên đến <strong>10.000.000 VNĐ</strong> cùng
+          giấy chứng nhận danh giá.
+        </p>
+
+        <!-- Mảng 1 -->
+        <section class="prize-card">
+          <div class="prize-header">
+            <i class="fas fa-lightbulb"></i>
+            <h2>Mảng 1</h2>
+          </div>
+          <div class="prize-content">
+            <div class="prize-tier gold">
+              <div class="prize-icon">🥇</div>
+              <div class="prize-details">
+                <h3>GIẢI NHẤT</h3>
+                <div class="prize-amount">800.000 đồng</div>
+                <p>+ Giấy chứng nhận</p>
+              </div>
+            </div>
+            <div class="prize-tier silver">
+              <div class="prize-icon">🥈</div>
+              <div class="prize-details">
+                <h3>GIẢI NHÌ</h3>
+                <div class="prize-amount">500.000 đồng</div>
+                <p>+ Giấy chứng nhận</p>
+              </div>
+            </div>
+            <div class="prize-tier bronze">
+              <div class="prize-icon">🥉</div>
+              <div class="prize-details">
+                <h3>GIẢI BA</h3>
+                <div class="prize-amount">300.000 đồng</div>
+                <p>+ Giấy chứng nhận</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Mảng 2 -->
+        <section class="prize-card">
+          <div class="prize-header">
+            <i class="fas fa-palette"></i>
+            <h2>Mảng 2</h2>
+          </div>
+          <div class="prize-content">
+            <div class="prize-tier gold">
+              <div class="prize-icon">🥇</div>
+              <div class="prize-details">
+                <h3>GIẢI NHẤT</h3>
+                <div class="prize-amount">1.000.000 đồng</div>
+                <p>+ Giấy chứng nhận</p>
+              </div>
+            </div>
+            <div class="prize-tier silver">
+              <div class="prize-icon">🥈</div>
+              <div class="prize-details">
+                <h3>GIẢI NHÌ</h3>
+                <div class="prize-amount">700.000 đồng</div>
+                <p>+ Giấy chứng nhận</p>
+              </div>
+            </div>
+            <div class="prize-tier bronze">
+              <div class="prize-icon">🥉</div>
+              <div class="prize-details">
+                <h3>GIẢI BA</h3>
+                <div class="prize-amount">500.000 đồng</div>
+                <p>+ Giấy chứng nhận</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Mảng 3 -->
+        <section class="prize-card special">
+          <div class="prize-header">
+            <i class="fas fa-trophy"></i>
+            <h2>Mảng 3</h2>
+          </div>
+          <div class="prize-content">
+            <div class="prize-tier gold">
+              <div class="prize-icon">🏆</div>
+              <div class="prize-details">
+                <h3>GIẢI NHẤT</h3>
+                <div class="prize-amount">2.000.000 đồng</div>
+                <p>
+                  + Giấy chứng nhận “Quán quân Energy Saving Challenge 2025”
+                </p>
+              </div>
+            </div>
+            <div class="prize-tier silver">
+              <div class="prize-icon">🥈</div>
+              <div class="prize-details">
+                <h3>GIẢI NHÌ</h3>
+                <div class="prize-amount">1.200.000 đồng</div>
+                <p>+ Giấy chứng nhận</p>
+              </div>
+            </div>
+            <div class="prize-tier bronze">
+              <div class="prize-icon">🥉</div>
+              <div class="prize-details">
+                <h3>GIẢI BA</h3>
+                <div class="prize-amount">800.000 đồng</div>
+                <p>+ Giấy chứng nhận</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Tổng giải thưởng -->
+        <div class="total-prize">
+          <h3><i class="fas fa-gift"></i> TỔNG GIÁ TRỊ GIẢI THƯỞNG</h3>
+          <div class="total-amount">10.000.000 VNĐ</div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer (load từ file ngoài) -->
+    <div data-include="/footer.html"></div>
+
+    <!-- JS để load header/footer -->
+    <script src="/js/include.js"></script>
+  </body>
+</html>
